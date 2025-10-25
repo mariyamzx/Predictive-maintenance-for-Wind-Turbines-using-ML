@@ -36,6 +36,15 @@ The dataset is provided by **ReneWind**, a company working on wind turbine effic
 - **Recall** is prioritized to minimize undetected failures (false negatives), as these are costlier than false positives.  
 - Feature importance analysis highlights the most critical turbine sensors for predicting failures.
 
+## Model Building: XGBoost with Oversampled Data
+XGBOOST on oversampled data worked best!
+To handle the class imbalance in the wind turbine failure dataset, the training data was oversampled. An **XGBoost classifier** was then trained using a pipeline that includes:
+
+- **Preprocessing:** Column transformations for numerical features (imputation + scaling).
+- **Model:** XGBoost with tuned hyperparameters
+ 
+The model was evaluated on **train, validation, and test sets** using metrics such as Accuracy, Recall, Precision, and F1-score. Feature importance was also extracted to identify key turbine sensor predictors affecting failures.
+
 ## Usage
 1. Clone the repository:
 
